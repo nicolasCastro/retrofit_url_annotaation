@@ -120,4 +120,4 @@ and finally use it like that:
 private val defaultApiUrl = BuildConfig.API_URL
 ```
 
-Check the complete code in the (github repo)[].
+Check the complete code in the [github repo](https://github.com/nicolasCastro/retrofit_url_annotaation).
