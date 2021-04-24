@@ -17,7 +17,7 @@ Something like this:
 class ServiceFactory() {
     private val defaultApiUrl = "https://www.example.com/v1/"
 
-    override fun <T> createInstance(clazz: Class<T>): T {
+    fun <T> createInstance(clazz: Class<T>): T {
         return retrofit(defaultApiUrl).create(clazz)
     }
     
@@ -76,7 +76,7 @@ Let's see a complete example.
 class ServiceFactory() {
     private val defaultApiUrl = "https://www.example.com/v1/"
 
-    override fun <T> createInstance(clazz: Class<T>): T {
+    fun <T> createInstance(clazz: Class<T>): T {
         // Check if the service have an annotation
         val apiUrlAnnotation = clazz.annotations.find { it is ApiUrl } as ApiUrl?
         // Take the url value, in another hand  use the default
