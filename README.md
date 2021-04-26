@@ -5,7 +5,7 @@
 When we create a new application, we will probably have multiple API calls.
 And probably some of them will be at different URLs.
 Retrofit provides a Url annotation to use in our methods,
-but we don't want to manage the string and we don't want to pass it on every invocation of a method.
+but we don't want to manage the string and we don't want to pass it on every invocation of the method.
 We want each service to know which url it should point to.
 Well, in this tutorial we are going to see a solution.
 
@@ -46,11 +46,11 @@ annotation class ApiUrl(
 
 We will apply this class to retrofit interfaces as class annotation.
 
-## Make the change
+## Using Annotations
 
 Now is the time to see the change in the `ServiceFactory` class.
-Let's start looking if our service contains the annotation we just created.
-In the `createInstance` method, we will add the following line to the beginning:
+Let's start by asking if our service contains the annotation we just created.
+In order to do that, in the `createInstance` method, we will add the following line to the beginning:
 
 ```
 val apiUrlAnnotation = clazz.annotations.find { it is ApiUrl } as ApiUrl?
@@ -97,7 +97,7 @@ class ServiceFactory() {
 
 ## An extra improvement
 
-Instead of using urls in your code, compile them into the BuildConfig class.
+Instead of using urls in your code, compile them into the `BuildConfig` class.
 In this way you can save your urls in the gradle.properties file and refer to them in the build.config file.
 
 **gradle.properties**
